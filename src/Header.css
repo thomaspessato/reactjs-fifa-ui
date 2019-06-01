@@ -1,0 +1,84 @@
+.Header {
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.Header .user-earnings-container {
+    display: flex;
+}
+
+.Header .user-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #013247;
+    padding: 5px;
+}
+
+.Header .user-team-badge {
+    height: 50px;
+}
+
+.Header .team-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.Header .user-info-header {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.Header .team-date {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.Header .left-user-info,
+.Header .right-user-info {
+    display: flex;
+    position: relative;
+}
+
+.Header .user-info {
+    background-color: white;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Header .right-edge {
+    position: absolute;
+    right: -80px;
+    height: 100%;
+    border-right: 40px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 60px 80px 0 0px;
+    border-color: #ffffff transparent transparent transparent;
+}
+/* 
+.Header .left-edge {
+    position: relative;
+    width: 54px;
+    box-sizing: content-box;
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: #253f6c  transparent;
+  } */
+/* .Header .left-edge:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -85px;
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent #253f6c ;
+} */

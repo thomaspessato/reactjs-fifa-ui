@@ -1,6 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: auto;
+  /* display: flex; */
+  background: url("/static/media/fifa-bg-home.7d2357bc.jpg");
+}
+
 .App {
   text-align: center;
+  background-size: cover;
+  padding-bottom: 50px;
 }
+
+
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,7 +29,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,6 +41,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App .card-container {
+  display: flex;
+  margin: 0 50px;
+  flex-wrap: wrap;
 }
 
 @keyframes App-logo-spin {
