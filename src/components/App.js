@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import Navbar from  './Navbar';
-import Card from './Card';
+import Header from './Header/Header';
+import Navbar from  './Navbar/Navbar';
+import Card from './Card/Card';
 
 class App extends React.Component {
 
@@ -44,7 +44,7 @@ class App extends React.Component {
             },
             {
               id: "futcentral3",
-              type: "small",
+              type: "large",
               title: {
                 text: "DIVISION RIVALS",
                 color: "white",
@@ -58,7 +58,7 @@ class App extends React.Component {
             },
             {
               id: "futcentral4",
-              type: "small",
+              type: "large",
               title: {
                 text: "",
                 color: "white",

@@ -10,7 +10,7 @@ html, body {
 body {
   overflow: auto;
   /* display: flex; */
-  background: url("/static/media/fifa-bg-home.7d2357bc.jpg");
+  background: url("../assets/fifa-bg-home.jpg");
 }
 
 .App {
@@ -18,9 +18,6 @@ body {
   background-size: cover;
   padding-bottom: 50px;
 }
-
-
-
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

@@ -1,11 +1,10 @@
 import React from 'react';
 import './Header.css';
-import './UserEarning';
-import UserEarning from './UserEarning';
+import UserEarning from '../UserEarning/UserEarning';
 
-import iconCoin from './assets/icon-coins.png';
-import iconFifaPoints from './assets/icon-fifa-points.png';
-import iconRecord from './assets/icon-record.png';
+import iconCoin from '../../assets/icon-coins.png';
+import iconFifaPoints from '../../assets/icon-fifa-points.png';
+import iconRecord from '../../assets/icon-record.png';
 
 class Header extends React.Component {
     render() {
