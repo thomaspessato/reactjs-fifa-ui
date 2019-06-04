@@ -3,6 +3,16 @@ import './App.css';
 import Header from './Header/Header';
 import Navbar from  './Navbar/Navbar';
 import Card from './Card/Card';
+import CardDetail from './CardDetail/CardDetail';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function Detail() {
+  return <h2>Detail</h2>;
+}
 
 class App extends React.Component {
 
@@ -161,13 +171,17 @@ class App extends React.Component {
       cards.push(<Card key={this.state.cards[i].id} data={this.state.cards[i]}></Card>)
     }
     return (
-      <div className="App">
-        <Header></Header>
-        <Navbar activePage={this.state.activePage} onPageChange={(e, data) => { this.handlePageChange(e, data) }} items={this.state.menuItems}></Navbar>
-        <div class="card-container">
-          {cards}
+      <Router>
+        <div className="App">
+          <Header></Header>
+          <Navbar activePage={this.state.activePage} onPageChange={(e, data) => { this.handlePageChange(e, data) }} items={this.state.menuItems}></Navbar>
+          <Route exact path="/" component={Home} />
+          <Route path="/detail" component={Detail} />
+          <div class="card-container">
+            {cards}
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
   
