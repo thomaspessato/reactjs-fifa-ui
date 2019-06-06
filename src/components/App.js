@@ -2,17 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './Header/Header';
 import Navbar from  './Navbar/Navbar';
-import Card from './Card/Card';
 import CardDetail from './CardDetail/CardDetail';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Detail() {
-  return <h2>Detail</h2>;
-}
+import CardsContainer from './CardsContainer/CardsContainer';
 
 class App extends React.Component {
 
@@ -36,7 +28,7 @@ class App extends React.Component {
                 subtitle: "This Weekly Competition is LIVE",
                 color: "#29bd2b"
               },
-              background: "http://dc.rbsdirect.com.br/imagesrc/24432705.jpg?w=660"
+              image: "http://dc.rbsdirect.com.br/imagesrc/24432705.jpg?w=660"
             },
             {
               id: "futcentral2",
@@ -50,7 +42,7 @@ class App extends React.Component {
                 subtitle: "This Weekly Competition is LIVE",
                 color: "goldenrod"
               },
-              background: "https://netaaji.news/wp-content/uploads/2018/06/698067-messi.jpg"
+              image: "https://netaaji.news/wp-content/uploads/2018/06/698067-messi.jpg"
             },
             {
               id: "futcentral3",
@@ -64,7 +56,7 @@ class App extends React.Component {
                 subtitle: "This Weekly Competition is LIVE",
                 color: "#29bd2b"
               },
-              background: "https://conteudo.imguol.com.br/c/entretenimento/ab/2018/08/10/fifa-19---neymar-1533917429175_v2_900x506.jpg"
+              image: "https://conteudo.imguol.com.br/c/entretenimento/ab/2018/08/10/fifa-19---neymar-1533917429175_v2_900x506.jpg"
             },
             {
               id: "futcentral4",
@@ -78,7 +70,7 @@ class App extends React.Component {
                 subtitle: "",
                 color: ""
               },
-              background: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2ybOb"
+              image: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2ybOb"
             }
           ]
         },
@@ -98,7 +90,7 @@ class App extends React.Component {
                 subtitle: "This Weekly Competition is LIVE",
                 color: "#29bd2b"
               },
-              background: "https://media.contentapi.ea.com/content/dam/ea/easports/fifa/fifa-19-home/fifa19_refresh/franchise-hero-tertiary-fifa19-home-update-key-art-xs.jpg"
+              image: "https://media.contentapi.ea.com/content/dam/ea/easports/fifa/fifa-19-home/fifa19_refresh/franchise-hero-tertiary-fifa19-home-update-key-art-xs.jpg"
             },
             {
               id: "single2",
@@ -112,7 +104,7 @@ class App extends React.Component {
                 subtitle: "Your Weekend League begins soon",
                 color: "#29bd2b"
               },
-              background: "https://static1.squarespace.com/static/54d10203e4b0d299700879e5/t/5ccb5b73195cb900011bee32/1556831098332/Fifa2019.png"
+              image: "https://static1.squarespace.com/static/54d10203e4b0d299700879e5/t/5ccb5b73195cb900011bee32/1556831098332/Fifa2019.png"
             }
           ]
         },
@@ -160,26 +152,21 @@ class App extends React.Component {
       activePage: data.page,
       cards: data.cards
     })
+    this.render();
   }
 
   render() {
-    if(!this.state.cards) {
-      return ('');
-    }
-    let cards = [];
-    for(let i = 0; i < this.state.cards.length; i++) {
-      cards.push(<Card key={this.state.cards[i].id} data={this.state.cards[i]}></Card>)
-    }
+    console.log("rendering");
     return (
       <Router>
         <div className="App">
           <Header></Header>
           <Navbar activePage={this.state.activePage} onPageChange={(e, data) => { this.handlePageChange(e, data) }} items={this.state.menuItems}></Navbar>
-          <Route exact path="/" component={Home} />
-          <Route path="/detail" component={Detail} />
-          <div class="card-container">
-            {cards}
-          </div>
+          <Route exact path="/home" render={(routeProps) => (
+            <CardsContainer {...routeProps} cards={this.state.cards} />
+          )} 
+          />
+          <Route path="/detail" component={CardDetail} />
         </div>
       </Router>
     );

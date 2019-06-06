@@ -13,11 +13,23 @@
 .Navbar ul li {
     flex: 1;
     background-color: white;
-    padding: 7px 0px;
     min-width: 140px;
     width: 140px;
     transition: all 200ms ease;
     cursor: pointer;
+}
+
+.Navbar ul li a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    height: 100%;
+    padding: 8px;
+}
+
+.Navbar ul li.active a {
+    color: white; 
 }
 
 .Navbar ul li:hover {
@@ -27,6 +39,5 @@
 
 .Navbar ul li.menu-item.active {
     background: #183f93;
-    color: white;
     font-weight: bold;
 }

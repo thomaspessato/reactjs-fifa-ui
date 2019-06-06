@@ -23,7 +23,7 @@ class Card extends React.Component {
             <Link to={'/detail/'+this.props.data.title.text} style={{
                 height: cardHeight,
                 backgroundSize: 'cover',
-                backgroundImage: "url(" + this.props.data.background + ")"
+                backgroundImage: "url(" + this.props.data.image + ")"
                 }} class="card">
                 <span class="card-title" style={{color: this.props.data.title.color}}>{this.props.data.title.text}</span>
                 <span class="card-tag" style={{backgroundColor: this.props.data.tag.color}}>{this.props.data.tag.title}</span>

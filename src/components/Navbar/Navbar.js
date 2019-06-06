@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import './Navbar.css';
 
 class Navbar extends React.Component {
@@ -18,7 +20,10 @@ class Navbar extends React.Component {
             if(this.props.items[i].page === this.props.activePage) {
                 classes += ' active';
             }
-            divs.push(<li class={classes} onClick={((e) => this.handleClick(e, this.props.items[i]))} key={i}>{this.props.items[i].title}</li>)
+            divs.push(
+            <li class={classes}>
+                <Link to={'/home'} onClick={((e) => this.handleClick(e, this.props.items[i]))} key={i}>{this.props.items[i].title}</Link>
+            </li>)
         }
         return (
             <div class="Navbar">

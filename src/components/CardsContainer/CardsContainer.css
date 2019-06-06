@@ -1,0 +1,5 @@
+.App .card-container {
+    display: flex;
+    margin: 0 50px;
+    flex-wrap: wrap;
+  }

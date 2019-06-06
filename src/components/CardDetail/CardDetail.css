@@ -1,0 +1,32 @@
+.card-detail {
+    display: flex;
+    margin: 20px 56px;
+}
+
+.image-container {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container__image {
+    flex: 1 1;
+    height: 400px;
+    min-height: 400px;
+    object-fit: cover;
+    box-shadow: 1px 1px 10px -3px black;
+}
+
+.content {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 20px;
+}
+
+.content__title,
+.content__body {
+    margin: 0;
+    text-align: left;
+}
